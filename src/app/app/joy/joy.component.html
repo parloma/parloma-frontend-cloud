@@ -1,0 +1,18 @@
+<div class='container'>
+
+    <canvas 
+        #joyCanvas 
+        class="joy" 
+        width='500' 
+        height='500' 
+        (mousedown)="down($event)" 
+        (mouseup)=up($event) 
+        (document:mousemove)="drag($event)">
+    </canvas>
+
+    <div class="data">
+        <p> <strong>x</strong> {{cmd.x | number:'1.1-5'}} </p>
+        <p> <strong>y</strong> {{cmd.y | number:'1.1-5' }} </p>
+    </div>
+
+</div>

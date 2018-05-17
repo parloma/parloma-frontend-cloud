@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="grid">
+  <div class="leftmenu">
+    <div>
+      <a routerLink="/" name="home" routerLinkActive="activated" [routerLinkActiveOptions]="{exact: true}"> <i class="fa fa-home"></i> </a>
+      <a routerLink="/tools/programs" *ngIf="loggedIn()" name="Programs" routerLinkActive="activated" [routerLinkActiveOptions]="{exact: true}"> <i class="fas fa-code"></i> </a>
+      <a routerLink="/app/joy" name="Apps"> <i class="fab fa-superpowers"></i> </a>
+    </div>
+    <div>
+      <a routerLink="/admin" name="Admin" *ngIf="adminLoggedIn()"> <i class="fas fa-unlock-alt"></i> </a>
+      <a routerLink="/auth/login" *ngIf="!loggedIn()" name="Log In" routerLinkActive="activated" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-sign-in-alt"></i> </a>
+      <a (click)="logOut()" name="Log Out" *ngIf="loggedIn()" routerLinkActive="activated" [routerLinkActiveOptions]="{exact: true}"><i class="fas fa-sign-out-alt"></i> </a>
+    </div>
+  </div>
+  <div class="container">
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <app-console *ngIf="loggedIn()"></app-console>
+    <app-userinfo *ngIf="loggedIn()"></app-userinfo>
+  </div>
+</div>

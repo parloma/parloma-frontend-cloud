@@ -1,0 +1,12 @@
+<div class="container">
+  <div *ngIf="!error && !confirmed">
+    <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+  </div>
+  <div *ngIf="error">
+    <p>There was some error in your registration!</p>
+  </div>
+  <div *ngIf="confirmed">
+    <p>User Confirmed!</p>
+    <p>Now you can <a routerLink="../../login">Log In</a></p>
+  </div>
+</div>

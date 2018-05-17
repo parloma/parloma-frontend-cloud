@@ -1,0 +1,20 @@
+
+
+.container {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    .joy {
+        margin: 10px;
+        border-radius: 20px;
+        background: black;
+        border: 2px solid black;
+        cursor: crosshair;
+    }
+
+    .data {
+        width: 25%;
+    }
+}

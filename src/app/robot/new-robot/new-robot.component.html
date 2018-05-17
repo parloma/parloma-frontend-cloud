@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Discover a local Robot</h1>
+  <ol>
+    <li>Turn the Robot On</li>
+    <li> Connect the computer to the wifi network
+        <strong>dotbot.xxxxxxxx</strong></li>
+  </ol>
+
+  <div *ngIf="!getRobot()">
+      <p><i class="fas fa-spinner fa-spin"></i></p>
+  </div>
+
+  <div *ngIf="getRobot()">
+      
+  </div>
+
+</div>

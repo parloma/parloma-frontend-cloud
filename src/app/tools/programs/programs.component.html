@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h1 class="title"> Program Lists </h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    
+    <tr *ngFor="let program of programService.programs">
+      <td>{{ program.name }}</td>
+      <td>
+        <div class="button-group tiny nomargin">
+            <a (click)="open(program)" role="button" class="button"> Open </a>
+            <button class="alert button" (click)="delete(program)">Delete</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <form [formGroup]="formGroup" (ngSubmit)="addProgram(formGroup.value, formGroup.valid)">
+    <h1>New Program</h1>
+    <dynamic-foundation-form
+      [group]="formGroup"
+      [model]="formModel">
+    </dynamic-foundation-form>
+    <button type="submit" class="button" [disabled]="!formGroup.valid">Create</button>
+  </form>
+
+</div>

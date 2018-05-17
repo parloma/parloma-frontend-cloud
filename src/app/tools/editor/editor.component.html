@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="nav">
+    <div></div>
+    <div class="buttons">
+      <button *ngIf="rosService.isConnected()" (click)="run()" type="button"><i class="fas fa-play"></i></button>
+      <button (click)="save()" type="button"><i class="fas fa-save"></i></button>
+    </div>
+  </div>
+    
+    <ace-editor
+    [(text)]="text"
+    [mode]="'python'"
+    [theme]="'solarized_dark'"
+    [options]="options"
+    style="width:100%; height: 100vh"
+    #editor>
+  </ace-editor>  
+</div>
+

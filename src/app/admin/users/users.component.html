@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div *ngFor="let user of users">
+    <p>{{ user.email }}</p> 
+    <button class="button alert"(click)="deleteUser(user)"> Delete </button>
+  </div>
+
+  <form [formGroup]="formGroup" (ngSubmit)="submit(formGroup.value, formGroup.valid)">
+    <h1>Add User</h1>
+    <dynamic-foundation-form
+      [group]="formGroup"
+      [model]="formModel">
+    </dynamic-foundation-form>
+    <button type="submit" class="button" [disabled]="!formGroup.valid">Create</button>
+  </form>
+</div>

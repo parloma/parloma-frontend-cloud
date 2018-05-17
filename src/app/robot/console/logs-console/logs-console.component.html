@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="tablemenu">
+      <div>Log Console</div>
+
+      <div>filter: </div>
+      <div>
+        <select [(ngModel)]="logNode">
+            <option [ngValue]="undefined"> all </option>
+            <option *ngFor="let node of rosService.nodes" [ngValue]="node">{{node.name}}</option>
+          </select>
+      </div>
+      </div>
+      <div class="content" [scrollTop]="scrollMe.scrollHeight" #scrollMe>
+        <table  >
+            <tr *ngFor="let log of logs()"  [className]="logClassFromLog(log)">
+              <td> {{log.name}} </td>
+              <td> {{log.msg}} </td>
+            </tr>
+          </table>
+      </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <p *ngFor="let token of tokens">
+      {{token.token}} - {{token.role}}
+    </p>
+  </div>
+
+  <form [formGroup]="formGroup" (ngSubmit)="submit(formGroup.value, formGroup.valid)">
+      <h1>Add Token</h1>
+      <dynamic-foundation-form
+        [group]="formGroup"
+        [model]="formModel">
+      </dynamic-foundation-form>
+      <button type="submit" class="button" [disabled]="!formGroup.valid">Create</button>
+    </form>
+  
+</div>

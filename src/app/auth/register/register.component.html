@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit(formGroup.value, formGroup.valid)">
+  <h1>Register</h1>
+  <dynamic-foundation-form
+    [group]="formGroup"
+    [model]="formModel">
+  </dynamic-foundation-form>
+  <button type="submit" class="button" [disabled]="!formGroup.valid">Register</button>
+  <div class="callout alert" *ngIf="showAlert">
+    <p>Username or password invalid</p>
+  </div>
+  <div>
+    <a routerLink="/auth/login"> Login... </a>
+  </div>
+</form>
+

@@ -1,0 +1,17 @@
+<div class="container">
+  <img src="/assets/main.jpg" alt="DotBot main page">
+  <div class="info">
+    <h1 class="title"> PARLOMA Cloud Platform</h1>
+    <div *ngIf="!loggedIn()">
+      <a routerLink="/auth/login" role="button" class="button large">Login to Start</a>
+    </div>   
+    <div *ngIf="loggedIn()">
+      <p> Connect to a Remote Robot</p>
+    </div>   
+
+  </div>
+
+  <div *ngIf="loggedIn()" class="finder">
+      <app-finder></app-finder>
+  </div>
+</div>

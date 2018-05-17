@@ -1,0 +1,43 @@
+
+<div class="container">
+  <div class="title">
+      <h1> Search Console</h1>
+      <div *ngIf="isSearching()"> <i class="fas fa-spinner fa-spin"></i> </div>    
+      <button class="button small" (click)="startSearching()" *ngIf="!isSearching()"> Start Search </button>
+      <button class="button small" (click)="stopSearching()" *ngIf="isSearching()"> Stop Search </button>
+  </div>
+  
+  <div class="robot-container">
+    <div class="robot" *ngFor="let robot of robotService.getRobots()">
+      <img src="{{robot.img}}" alt="">
+      <div class="fill-bg">
+        <h1> {{ robot.name }} </h1>
+        <p> {{ robot.ip }}</p>
+      </div>
+      <div class="expanded button-group small">
+        <button class="button" (click)="connectRobot(robot)"> Connect</button>
+        <button class="button" (click)="blinkRobot(robot)"> Blink</button>
+        <a class="button" role="button" href="http://{{robot.ip}}" target="_blank"> Config</a>
+      </div>
+    </div>   
+    <div class="robot">
+      <div class="fill-bg">
+          <h1> Configure new Robot </h1>
+          <div class="center-element"> <i class="fas fa-plus-square"></i> </div>
+        </div>
+      <div class="expanded button-group small">
+        <a class="button" role="button" routerLink="/robot/new">Start Configuration</a>
+      </div>
+    </div>
+    <form [formGroup]="formGroup" (ngSubmit)="connectIp(formGroup.value, formGroup.valid)">
+      <h1>Manually Connect</h1>
+      <dynamic-foundation-form
+        [group]="formGroup"
+        [model]="formModel">
+      </dynamic-foundation-form>
+      <button type="submit" class="button" [disabled]="!formGroup.valid">Connect</button>
+    </form>
+  </div>
+</div>
+
+

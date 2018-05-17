@@ -1,0 +1,40 @@
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 30px auto;
+
+    .tablemenu {
+        font-size: 9pt;
+        font-weight: bold;
+        background: #2461a5;
+        color: white;
+        display: flex;
+        align-items: center;
+        div {
+            padding-left: 10px;
+        }
+
+        select {
+            margin: 0;
+            height: 20px;
+            padding: 0 24px;
+            border-radius: 5px;
+            font-size: 10px;
+        }
+    }
+
+    .content {
+        max-height: 300px;
+        min-height: 300px;
+        overflow-y: scroll;
+        table {
+            tr {
+                td {
+                    padding: 0 !important;
+                }
+            }
+        }
+    
+    }
+}
+

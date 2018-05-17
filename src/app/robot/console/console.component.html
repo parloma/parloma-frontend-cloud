@@ -1,0 +1,32 @@
+
+<div class="container">
+
+<div class=status>
+    <div class="element" *ngIf="robotIsConnected()" name="Robot">
+      <i style="color:#00f700; padding-right: 10px" class="fas fa-circle">
+      </i>ROS Connected
+      <div class="disconnect-btn">
+          <button class="button tiny alert" (click)="disconnect()">Disconnect</button>
+      </div>
+    </div>
+    <div class="element" *ngIf="!robotIsConnected()" name="Robot"><i style="color:#f76300; padding-right: 10px" class="fas fa-circle"></i>No Robot Connected</div>
+ 
+  <div *ngIf="robotIsConnected()">
+      <button class="element" [ngClass]="{'active':tabLogs() && visible}" (click)=showLogs()>logs</button>
+      <button class="element" [ngClass]="{'active':tabTopics() && visible}" (click)=showTopics()>topics</button>
+      <button class="element" [ngClass]="{'active':tabNodes() && visible}" (click)=showNodes()>nodes</button>
+      <button class="element" (click)=toggle()>
+        <i *ngIf="visible" class="fas fa-times"></i>
+        <i *ngIf="!visible" class="fas fa-chevron-up"></i>
+      </button>    
+  </div>
+
+</div>
+
+  <div class="content" *ngIf="robotIsConnected()  && visible">
+      <app-topic-console *ngIf="tabTopics()"></app-topic-console>
+      <app-node-console *ngIf="tabNodes()"></app-node-console>
+      <app-logs-console *ngIf="tabLogs()"></app-logs-console>
+  </div>
+
+</div>

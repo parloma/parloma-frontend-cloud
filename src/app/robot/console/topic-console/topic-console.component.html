@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="tablemenu">
+    <div>Topics Console</div>
+  </div>
+
+  <div class="content">
+    <div class="grid">
+        <div class="topic-container" *ngFor="let topic of topics()">
+            <div class="topicinfo">
+            <button class="button small" [ngClass]="{'warning':topic.isLogging()}" (click)="toggle(topic)"> 
+              <span *ngIf="!topic.isLogging()">Echo</span>  
+              <span *ngIf="topic.isLogging()">Close</span>  
+            </button>
+            <div> <strong>{{topic.name}} </strong> {{topic.messageType}} </div>
+            </div>
+            <div class="topic-log" *ngIf="topic.isLogging()">
+              <div *ngIf="topic.messageType != 'sensor_msgs/Image'">
+                <td  class="data"><pre>{{ topic.data | json}}</pre> </td>
+              </div>
+              <div *ngIf="topic.messageType == 'sensor_msgs/Image'">
+                <img class="topic-img" src="http://localhost:8080/stream?topic={{topic.name}}" alt="">
+              </div>
+
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

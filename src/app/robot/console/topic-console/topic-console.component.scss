@@ -1,0 +1,28 @@
+.grid {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    .topic-container {
+        padding: 10px;
+        background: #eee;
+        .topicinfo {
+            display: grid;
+            grid-template-columns: 100px auto;
+            grid-gap: 10px;
+            align-items: center;
+
+        }
+
+        .topic-log {
+            .topic-img {
+                width: 200px;
+                margin:20px 0;
+            }
+
+        }
+        button {
+            margin: 0;
+        }
+    }
+}
