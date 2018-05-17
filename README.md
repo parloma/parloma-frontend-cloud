@@ -16,4 +16,4 @@ This projects has been developed by Ludovico Russo and has been suppoerted by th
 
 ## License
 
-This project is lincensed under 
+This project is lincensed under BSD 3 Clause. See the [`LICENSE`](./LICENSE) file for more detail.
