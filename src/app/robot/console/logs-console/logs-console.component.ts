@@ -12,7 +12,7 @@ export class LogsConsoleComponent implements OnInit {
   logNode: any;
   maxLog = 100;
   // public logs: RosLog[];
-  constructor(private rosService: RosService) { 
+  constructor(public rosService: RosService) { 
     this.logNode = undefined;
   }
 

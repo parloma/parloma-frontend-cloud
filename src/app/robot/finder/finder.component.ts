@@ -30,9 +30,9 @@ export class FinderComponent implements OnInit, OnDestroy {
   formGroup: FormGroup;
 
   constructor(
-    private robotService:  RobotService,
-    private rosService: RosService,
-    private formService: DynamicFormService
+    public robotService:  RobotService,
+    public rosService: RosService,
+    public formService: DynamicFormService
   ) { 
     this.formGroup = this.formService.createFormGroup(this.formModel);
   }

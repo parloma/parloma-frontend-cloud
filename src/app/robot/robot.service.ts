@@ -68,7 +68,7 @@ export class RobotService {
 
     testRobot(robot:Robot) {
       console.log('testing robot:', robot, this.robots);
-      let res = this.http.get('http://'+ robot.ip+'/api/discovery');
+      let res = this.http.get('http://'+ robot.ip+'/api/1.1/discovery');
       res.pipe(share(), timeout(500))
         .subscribe(
         data => robot.setData(data)
@@ -78,7 +78,7 @@ export class RobotService {
 
 
     blinkRobot(robot:Robot) {
-      this.http.post('http://' + robot.ip + '/api/blink', {}).subscribe(
+      this.http.post('http://' + robot.ip + '/api/1.1/blink', {}).subscribe(
         (data) => console.log('ok')
       )
     }

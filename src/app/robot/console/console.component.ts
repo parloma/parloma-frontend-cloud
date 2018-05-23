@@ -17,7 +17,7 @@ enum ToShow {
 export class ConsoleComponent implements OnInit, OnDestroy {
   
   private _toShow:ToShow = ToShow.Logs;
-  private visible:boolean = false;
+  public visible:boolean = false;
 
   constructor(
     public rosService: RosService
