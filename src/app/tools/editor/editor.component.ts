@@ -24,7 +24,7 @@ export class EditorComponent implements OnInit, AfterViewInit {
   constructor(
     public programService: ProgramService,
     private router: Router,
-    private rosService: RosService  
+    public rosService: RosService  
     ) {
 
     }
