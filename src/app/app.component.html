@@ -5,7 +5,7 @@
     <div>
       <a routerLink="/" name="home" routerLinkActive="activated" [routerLinkActiveOptions]="{exact: true}"> <i class="fa fa-home"></i> </a>
       <a routerLink="/tools/programs" *ngIf="loggedIn()" name="Programs" routerLinkActive="activated" [routerLinkActiveOptions]="{exact: true}"> <i class="fas fa-code"></i> </a>
-      <a routerLink="/app/joy" name="Apps"> <i class="fab fa-superpowers"></i> </a>
+      <a routerLink="/app/leap" name="Apps"> <i class="fab fa-superpowers"></i> </a>
     </div>
     <div>
       <a routerLink="/admin" name="Admin" *ngIf="adminLoggedIn()"> <i class="fas fa-unlock-alt"></i> </a>

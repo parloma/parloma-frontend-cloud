@@ -30,6 +30,7 @@
     "angular2-text-mask": "^8.0.4",
     "core-js": "^2.4.1",
     "foundation-sites": "^6.4.4-rc1",
+    "leapjs": "^0.6.4",
     "ng2-ace-editor": "^0.3.4",
     "roslib": "git://github.com/RobotWebTools/roslibjs.git#develop",
     "rxjs": "^5.5.6",

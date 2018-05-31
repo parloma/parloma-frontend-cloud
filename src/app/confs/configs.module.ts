@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+const URL = 'http://api.parloma.science';
 export class AppConfig {
   url: string;
   userEnd: string;
@@ -8,9 +9,9 @@ export class AppConfig {
 }
 
 export const APP_CONFIG: AppConfig = {
-  url: 'http://test.hotblackrobotics.com',
-  userEnd: 'http://test.hotblackrobotics.com'+'/api/users/1.0',
-  adminEnd: 'http://test.hotblackrobotics.com'+'/api/admin/1.0',
+  url: URL,
+  userEnd: URL+'/api/users/1.0',
+  adminEnd: URL+'/api/admin/1.0',
   robot_local_ip: '192.168.29.1'
 };
 

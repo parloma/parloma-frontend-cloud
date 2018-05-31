@@ -43,13 +43,14 @@ import { NewRobotComponent } from './robot/new-robot/new-robot.component';
 import { LocalRobotService } from './robot/local-robot.service';
 import { UserinfoComponent } from './main/userinfo/userinfo.component';
 import { RegisterTokenComponent } from './admin/register-token/register-token.component';
+import { LeapComponent } from './app/leap/leap.component';
 
 export function jwtOptionsFactory() {
   return {
     tokenGetter: () => {
       return localStorage.getItem('access_token');
     },
-    whitelistedDomains: ["test.hotblackrobotics.com"]
+    whitelistedDomains: ["api.parloma.science"]
   }
 }
 
@@ -76,7 +77,8 @@ export function jwtOptionsFactory() {
     ConfigureComponent,
     NewRobotComponent,
     UserinfoComponent,
-    RegisterTokenComponent
+    RegisterTokenComponent,
+    LeapComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

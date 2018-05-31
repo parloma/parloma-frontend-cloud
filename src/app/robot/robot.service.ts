@@ -26,6 +26,9 @@ export class RobotService {
       private http: HttpClient,
       @Inject(APP_CONFIG) private config: AppConfig
     ) {
+      let robot: Robot = new Robot();
+      robot.bridge = '';
+      this.robots.push(robot);
     }
 
 

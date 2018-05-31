@@ -7,7 +7,7 @@ export class Robot {
     setData(data:any) {
       this.setBridge(data);
       this.name = data.name;
-      this.img = data.img || '/assets/dotbot.jpg';
+      this.img = data.img || '/assets/parloma.png';
     }
   
     private setBridge(data: any) {

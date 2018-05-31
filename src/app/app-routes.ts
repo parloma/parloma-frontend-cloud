@@ -15,6 +15,7 @@ import { RegisterSuccessComponent } from './auth/register-success/register-succe
 import { RegisterConfirmComponent } from './auth/register/register-confirm/register-confirm.component';
 import { NewRobotComponent } from './robot/new-robot/new-robot.component';
 import { RegisterTokenComponent } from './admin/register-token/register-token.component';
+import { LeapComponent } from './app/leap/leap.component';
 
 
 export const routes: Routes = [
@@ -37,9 +38,13 @@ export const routes: Routes = [
     {
       path: 'app', children: [
         {
-        path: 'joy',
-        component: JoyComponent
-      }
+          path: 'joy',
+          component: JoyComponent
+        },
+        {
+          path: 'leap',
+          component: LeapComponent
+        }
       ]
     },
     { path: 'auth', children: [
